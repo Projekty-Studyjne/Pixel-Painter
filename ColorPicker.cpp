@@ -1,3 +1,3 @@
 #include "ColorPicker.h"
 
-void ColorPicker::use(){}
+void ColorPicker::use(QPointF point){}

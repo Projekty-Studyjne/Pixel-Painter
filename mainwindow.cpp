@@ -32,5 +32,6 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
    QPoint viewPos = ui->GraphicBoard->mapFromGlobal(globalPos);
    QPointF scenePos = ui->GraphicBoard->mapToScene(viewPos);
 
+//   tool->use(scenePos);
  qDebug() << "Mouse position in scene:" << scenePos;
 }

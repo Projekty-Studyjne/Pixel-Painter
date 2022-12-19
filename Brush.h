@@ -5,9 +5,11 @@
 #include "Tool.h"
 #include <QPoint>
 #include <QCursor>
+#include "QGraphicsScene"
 
 class Brush : public Tool{
+    QGraphicsScene *scene = new QGraphicsScene();
 
 public:
-    void use() override;
+    void use(QPointF point) override;
 };

@@ -2,10 +2,10 @@
 #define TOOL_H
 
 #endif // TOOL_H
-
+#include <QPointF>
 class Tool {
 public:
     Tool(){}
-    virtual void use()=0;
+    virtual void use(QPointF point)=0;
 
 };

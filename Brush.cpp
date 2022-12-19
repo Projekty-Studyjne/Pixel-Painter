@@ -1,8 +1,6 @@
 #include "Brush.h"
+#include "QDebug"
 
+void Brush::use(QPointF point){
 
-void Brush::use(){
-    QPoint mousePos = QCursor::pos();
-    int x = mousePos.x();
-    int y = mousePos.y();
 }

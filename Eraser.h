@@ -6,5 +6,5 @@
 
 class Eraser : public Tool{
 public:
-    void use() override;
+    void use(QPointF point) override;
 };
