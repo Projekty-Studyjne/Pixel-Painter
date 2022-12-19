@@ -25,10 +25,6 @@ private:
     Board *board;
     Tool *tool= new Brush();
 protected:
-    void mousePressEvent(QMouseEvent* event) override{
-        if(event->button() == Qt::LeftButton){
-            tool->use();
-        }
-    }
+    void mousePressEvent(QMouseEvent *event);
 };
 #endif // MAINWINDOW_H
