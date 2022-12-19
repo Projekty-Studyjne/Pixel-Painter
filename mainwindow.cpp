@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    scene= new QGraphicsScene(ui->GraphicBoard);
+    test();
 }
 
 MainWindow::~MainWindow()
@@ -16,12 +16,13 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::test(){
-
+    board->createBoard(ui->GraphicBoard);
 }
 
 
-void MainWindow::on_btnBucket_clicked()
-{
 
+void MainWindow::on_btnBrush_clicked()
+{
+    tool = new Brush();
 }
 

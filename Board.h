@@ -1,11 +1,15 @@
 #ifndef BOARD_H
 #define BOARD_H
 #include "QGraphicsScene"
-#include "mainwindow.h"
+#include "QGraphicsView"
+
 #endif // BOARD_H
 class Board{
+private:
+    int cellsnumber=10;
 public:
-    void createBoard(QGraphicsScene *scene, QGraphicsView *GraphicBoard);
+    Board(){}
+    void createBoard(QGraphicsView *GraphicBoard);
     void undo();
     void open();
     void save();

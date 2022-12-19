@@ -3,6 +3,8 @@
 
 #endif // BRUSH_H
 #include "Tool.h"
+#include <QPoint>
+#include <QCursor>
 
 class Brush : public Tool{
 

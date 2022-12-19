@@ -10,6 +10,11 @@ CONFIG += c++11
 
 SOURCES += \
     Board.cpp \
+    Brush.cpp \
+    Bucket.cpp \
+    ColorPalette.cpp \
+    ColorPicker.cpp \
+    Eraser.cpp \
     main.cpp \
     mainwindow.cpp
 

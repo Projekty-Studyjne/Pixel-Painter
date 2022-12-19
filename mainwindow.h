@@ -2,13 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "Tool.h"
+#include "Board.h"
 #include "Brush.h"
-#include "Eraser.h"
-#include "ColorPalette.h"
-#include "ColorPicker.h"
-#include "Bucket.h"
-#include "QGraphicsScene"
+#include <QMouseEvent>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -23,11 +19,16 @@ public:
     void test();
 
 private slots:
-    void on_btnBucket_clicked();
-
+    void on_btnBrush_clicked();
 private:
     Ui::MainWindow *ui;
-    QGraphicsScene *scene;
-//    Tool *tool= new Brush();
+    Board *board;
+    Tool *tool= new Brush();
+protected:
+    void mousePressEvent(QMouseEvent* event) override{
+        if(event->button() == Qt::LeftButton){
+            tool->use();
+        }
+    }
 };
 #endif // MAINWINDOW_H
