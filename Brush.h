@@ -11,5 +11,5 @@ class Brush : public Tool{
     QGraphicsScene *scene = new QGraphicsScene();
     Board *board;
 public:
-    void use(QPointF point) override;
+    void use(vector<point> list, QPointF point) override;
 };

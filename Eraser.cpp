@@ -1,3 +1,3 @@
 #include "Eraser.h"
 
-void Eraser::use(QPointF point){}
+void Eraser::use(vector<point> list, QPointF point){}

@@ -4,9 +4,9 @@
 #endif // TOOL_H
 #include <QPointF>
 #include "Board.h"
+using namespace std;
 class Tool {
 public:
     Tool(){}
-    virtual void use(QPointF point)=0;
-
+    virtual void use(vector<point> list, QPointF point)=0;
 };

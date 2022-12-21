@@ -16,7 +16,8 @@ SOURCES += \
     ColorPicker.cpp \
     Eraser.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    tests.cpp
 
 HEADERS += \
     Board.h \
@@ -26,7 +27,8 @@ HEADERS += \
     ColorPicker.h \
     Eraser.h \
     Tool.h \
-    mainwindow.h
+    mainwindow.h \
+    tests.h
 
 FORMS += \
     mainwindow.ui

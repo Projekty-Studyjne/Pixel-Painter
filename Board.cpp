@@ -1,35 +1,43 @@
 #include <Board.h>
 
-void Board::createBoard(QGraphicsView *GraphicBoard){
-    QGraphicsScene *scene=new QGraphicsScene();
-    GraphicBoard->setScene(scene);
-    QPen blackpen(Qt::darkGray);
-    QBrush brush(Qt::white);
-    cellsnumber=24;
-    int window_size=600;
-    cell_size=window_size/cellsnumber;
-    for(int wielkosc_x=0; wielkosc_x<cellsnumber; wielkosc_x++){
-        for(int wielkosc_y=0; wielkosc_y<cellsnumber; wielkosc_y++){
-         scene->addRect(wielkosc_x*cell_size, wielkosc_y*cell_size, cell_size, cell_size, blackpen, brush);
-        }
-    }
-}
-
 void Board::fillTable(){
     point new_point;
     for(int x=0;x<cellsnumber;x++){
         for( int y=0;y<cellsnumber;y++){
             new_point={x,y,false,Qt::white};
-            points_list.push_back(new_point);
+            this->points_list.push_back(new_point);
             }
     }
 }
+
+void Board::createBoard(QGraphicsView *GraphicBoard){
+    QGraphicsScene *scene=new QGraphicsScene();
+    GraphicBoard->setScene(scene);
+    QPen blackpen(Qt::darkGray);
+    QBrush brush(Qt::white);
+    int window_size=600;
+    this->cellsnumber=10;
+    cell_size=window_size/cellsnumber;
+    for(int wielkosc_x=0; wielkosc_x<cellsnumber; wielkosc_x++){
+        for(int wielkosc_y=0; wielkosc_y<cellsnumber; wielkosc_y++){
+            if(getColorOfPoint({wielkosc_x,wielkosc_y}).toRgb()=="QColor(ARGB 1, 1, 1, 1)")
+            brush= Qt::red;
+         scene->addRect(wielkosc_x*cell_size, wielkosc_y*cell_size, cell_size, cell_size, blackpen, brush);
+        }
+    }
+}
+
+
 
 int Board::getCellSize(){
     return cell_size;
 }
 
-QVector<point> Board::getPointList(){
+int Board::getCellsNumber(){
+    return cellsnumber;
+}
+
+std::vector<point> Board::getPointList(){
     return points_list;
 }
 

@@ -15,13 +15,12 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void test();
 
 private slots:
     void on_btnBrush_clicked();
 private:
     Ui::MainWindow *ui;
-    Board *board;
+    Board *board = new Board();
     Tool *tool= new Brush();
 protected:
     void mousePressEvent(QMouseEvent *event);

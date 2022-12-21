@@ -3,6 +3,7 @@
 #include "QGraphicsScene"
 #include "QGraphicsView"
 #include "QVector"
+#include "tests.h"
 
 struct point{
     int x;
@@ -15,9 +16,8 @@ class Board{
 private:
     int cellsnumber=10;
     int cell_size=0;
-    QVector<point> points_list;
+    std::vector<point> points_list;
 public:
-    Board(){}
     void createBoard(QGraphicsView *GraphicBoard);
     void undo();
     void open();
@@ -25,8 +25,9 @@ public:
     void exportToFile();
     void clear();
     void fillTable();
-    QVector<point> getPointList();
+    std::vector<point> getPointList();
     int getCellSize();
     QColor getColorOfPoint(point point);
+    int getCellsNumber();
 };
 #endif // BOARD_H

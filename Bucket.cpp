@@ -1,3 +1,3 @@
 #include "Bucket.h"
 
-void Bucket::use(QPointF point){}
+void Bucket::use(vector<point> list, QPointF point){}
