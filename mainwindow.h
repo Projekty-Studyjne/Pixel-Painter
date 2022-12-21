@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "Board.h"
 #include "Brush.h"
 #include <QMouseEvent>
 QT_BEGIN_NAMESPACE

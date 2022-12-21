@@ -3,6 +3,7 @@
 
 #endif // TOOL_H
 #include <QPointF>
+#include "Board.h"
 class Tool {
 public:
     Tool(){}
