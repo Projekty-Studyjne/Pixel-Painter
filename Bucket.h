@@ -1,10 +1,10 @@
-#ifndef BUCKET_H
-#define BUCKET_H
+//#ifndef BUCKET_H
+//#define BUCKET_H
 
-#endif // BUCKET_H
-#include "Tool.h"
+//#endif // BUCKET_H
+//#include "Tool.h"
 
-class Bucket : public Tool{
-public:
-    void use(vector<point> list, QPointF point) override;
-};
+//class Bucket : public Tool{
+//public:
+//    void use(Board board, QPointF point) override;
+//};

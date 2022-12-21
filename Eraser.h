@@ -1,10 +1,10 @@
-#ifndef ERASER_H
-#define ERASER_H
+//#ifndef ERASER_H
+//#define ERASER_H
 
-#endif // ERASER_H
-#include "Tool.h"
+//#endif // ERASER_H
+//#include "Tool.h"
 
-class Eraser : public Tool{
-public:
-    void use(vector<point> list, QPointF point) override;
-};
+//class Eraser : public Tool{
+//public:
+//    void use(Board board, QPointF point) override;
+//};

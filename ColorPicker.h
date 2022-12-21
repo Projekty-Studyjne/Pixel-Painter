@@ -1,10 +1,10 @@
-#ifndef COLORPICKER_H
-#define COLORPICKER_H
+//#ifndef COLORPICKER_H
+//#define COLORPICKER_H
 
-#endif // COLORPICKER_H
-#include "Tool.h"
+//#endif // COLORPICKER_H
+//#include "Tool.h"
 
-class ColorPicker : public Tool{
-public:
-    void use(vector<point> list, QPointF point) override;
-};
+//class ColorPicker : public Tool{
+//public:
+//    void use(Board board, QPointF point) override;
+//};

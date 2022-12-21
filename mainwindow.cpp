@@ -26,6 +26,10 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
    QPoint globalPos = QCursor::pos();
    QPoint viewPos = ui->GraphicBoard->mapFromGlobal(globalPos);
    QPointF scenePos = ui->GraphicBoard->mapToScene(viewPos);
-   tool->use(board->getPointList(),scenePos);
- qDebug() << "Mouse position in scene:" << scenePos;
+   tool->use(*board,scenePos);
+    qDebug() << "Mouse position in scene:" << scenePos;
+        for(int i=0;i<board->getPointList().size();i++){
+            qInfo()<<"x: " << board->getPointList()[i].x << "y: " << board->getPointList()[i].y << "color: " << board->getPointList()[i].color.toRgb();
+        }
+   board->createBoard(ui->GraphicBoard);
 }

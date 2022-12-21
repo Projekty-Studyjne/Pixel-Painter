@@ -1,8 +1,8 @@
-#ifndef COLORPALETTE_H
-#define COLORPALETTE_H
+//#ifndef COLORPALETTE_H
+//#define COLORPALETTE_H
 
-#endif // COLORPALETTE_H
+//#endif // COLORPALETTE_H
 
-class ColorPalette{
+//class ColorPalette{
 
-};
+//};

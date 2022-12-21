@@ -1,3 +1,3 @@
-#include "ColorPicker.h"
+//#include "ColorPicker.h"
 
-void ColorPicker::use(vector<point> list, QPointF point){}
+//void ColorPicker::use(Board board, QPointF point){}

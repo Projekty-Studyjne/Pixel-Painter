@@ -1,3 +1,3 @@
-#include "Bucket.h"
+//#include "Bucket.h"
 
-void Bucket::use(vector<point> list, QPointF point){}
+//void Bucket::use(Board board, QPointF point){}

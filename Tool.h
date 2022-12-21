@@ -8,5 +8,5 @@ using namespace std;
 class Tool {
 public:
     Tool(){}
-    virtual void use(vector<point> list, QPointF point)=0;
+    virtual void use(Board &board, QPointF point)=0;
 };

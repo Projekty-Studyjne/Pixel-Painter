@@ -1,3 +1,3 @@
-#include "Eraser.h"
+//#include "Eraser.h"
 
-void Eraser::use(vector<point> list, QPointF point){}
+//void Eraser::use(Board board, QPointF point){}

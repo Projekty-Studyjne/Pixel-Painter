@@ -3,7 +3,8 @@
 #include "QGraphicsScene"
 #include "QGraphicsView"
 #include "QVector"
-#include "tests.h"
+//#include "tests.h"
+#include"QDebug"
 
 struct point{
     int x;
@@ -29,5 +30,6 @@ public:
     int getCellSize();
     QColor getColorOfPoint(point point);
     int getCellsNumber();
+    void setColor(QColor color, int index);
 };
 #endif // BOARD_H
