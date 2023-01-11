@@ -27,9 +27,15 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
    QPoint viewPos = ui->GraphicBoard->mapFromGlobal(globalPos);
    QPointF scenePos = ui->GraphicBoard->mapToScene(viewPos);
    tool->use(*board,scenePos);
-    qDebug() << "Mouse position in scene:" << scenePos;
         for(int i=0;i<board->getPointList().size();i++){
             qInfo()<<"x: " << board->getPointList()[i].x << "y: " << board->getPointList()[i].y << "color: " << board->getPointList()[i].color.toRgb();
         }
    board->createBoard(ui->GraphicBoard);
 }
+
+void MainWindow::on_sldCellsNumber_valueChanged(int value)
+{
+    board->setCellsNumber(value);
+    board->createBoard(ui->GraphicBoard);
+}
+

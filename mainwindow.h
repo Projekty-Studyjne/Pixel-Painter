@@ -18,6 +18,8 @@ public:
 
 private slots:
     void on_btnBrush_clicked();
+    void on_sldCellsNumber_valueChanged(int value);
+
 private:
     Ui::MainWindow *ui;
     Board *board = new Board();

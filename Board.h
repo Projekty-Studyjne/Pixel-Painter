@@ -15,8 +15,8 @@ struct point{
 
 class Board{
 private:
-    int cellsnumber=10;
-    int cell_size=0;
+    int cellsNumber=10;
+    int cellSize=0;
     std::vector<point> points_list;
 public:
     void createBoard(QGraphicsView *GraphicBoard);
@@ -26,6 +26,8 @@ public:
     void exportToFile();
     void clear();
     void fillTable();
+    void setCellsNumber(int cellsnumber);
+    void setCellSize(int cellsize);
     std::vector<point> getPointList();
     int getCellSize();
     QColor getColorOfPoint(point point);

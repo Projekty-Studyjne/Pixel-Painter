@@ -2,8 +2,8 @@
 
 void Board::fillTable(){
     point new_point;
-    for(int x=0;x<cellsnumber;x++){
-        for( int y=0;y<cellsnumber;y++){
+    for(int x=0;x<cellsNumber;x++){
+        for( int y=0;y<cellsNumber;y++){
             new_point={x,y,false,Qt::white};
             this->points_list.push_back(new_point);
             }
@@ -16,22 +16,22 @@ void Board::createBoard(QGraphicsView *GraphicBoard){
     QPen blackpen(Qt::darkGray);
     QBrush brush;
     int window_size=600;
-    this->cellsnumber=10;
-    cell_size=window_size/cellsnumber;
-    for(int wielkosc_x=0; wielkosc_x<cellsnumber; wielkosc_x++){
-        for(int wielkosc_y=0; wielkosc_y<cellsnumber; wielkosc_y++){
+    cellSize=window_size/cellsNumber;
+    setCellSize(cellSize);
+    for(int wielkosc_x=0; wielkosc_x<cellsNumber; wielkosc_x++){
+        for(int wielkosc_y=0; wielkosc_y<cellsNumber; wielkosc_y++){
           QColor color(getColorOfPoint({wielkosc_x, wielkosc_y}));
-         scene->addRect(wielkosc_x*cell_size, wielkosc_y*cell_size, cell_size, cell_size, blackpen, color);
+         scene->addRect(wielkosc_x*cellSize, wielkosc_y*cellSize, cellSize, cellSize, blackpen, color);
         }
     }
 }
 
 int Board::getCellSize(){
-    return cell_size;
+    return cellSize;
 }
 
 int Board::getCellsNumber(){
-    return cellsnumber;
+    return cellsNumber;
 }
 
 std::vector<point> Board::getPointList(){
@@ -52,7 +52,15 @@ void Board::setColor(QColor color, int index){
     points_list[index].color = color;
 }
 
+void Board::setCellsNumber(int cellsnumber){
+    this->cellsNumber=cellsnumber;
+    points_list.clear();
+    fillTable();
+}
 
+void Board::setCellSize(int cellsize){
+    this->cellSize=cellSize;
+}
 
 
 
