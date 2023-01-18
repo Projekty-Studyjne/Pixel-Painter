@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="btnBrush">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>40</y>
+      <x>130</x>
+      <y>60</y>
       <width>80</width>
       <height>21</height>
      </rect>
@@ -71,6 +71,19 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
+   <widget class="QPushButton" name="btnEraser">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>100</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Eraser</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -78,7 +91,7 @@
      <x>0</x>
      <y>0</y>
      <width>1158</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

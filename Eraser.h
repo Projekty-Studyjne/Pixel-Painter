@@ -1,10 +1,13 @@
-//#ifndef ERASER_H
-//#define ERASER_H
+#pragma once
+#ifndef ERASER_H
+#define ERASER_H
 
-//#endif // ERASER_H
-//#include "Tool.h"
+#endif // ERASER_H
+#include "Tool.h"
 
-//class Eraser : public Tool{
-//public:
-//    void use(Board board, QPointF point) override;
-//};
+class Eraser : public Tool{
+    QGraphicsScene *scene = new QGraphicsScene();
+    Board *board;
+public:
+    void use(Board &board, QPointF point);
+};

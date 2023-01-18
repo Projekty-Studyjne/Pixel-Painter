@@ -39,3 +39,10 @@ void MainWindow::on_sldCellsNumber_valueChanged(int value)
     board->createBoard(ui->GraphicBoard);
 }
 
+void MainWindow::on_btnEraser_clicked()
+{
+    delete tool;
+    tool = new Eraser();
+}
+
+

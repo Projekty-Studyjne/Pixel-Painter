@@ -1,3 +1,4 @@
+#pragma once
 //#ifndef COLORPALETTE_H
 //#define COLORPALETTE_H
 

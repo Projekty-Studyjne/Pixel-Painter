@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "Brush.h"
+#include "Eraser.h"
 #include <QMouseEvent>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,6 +20,7 @@ public:
 private slots:
     void on_btnBrush_clicked();
     void on_sldCellsNumber_valueChanged(int value);
+    void on_btnEraser_clicked();
 
 private:
     Ui::MainWindow *ui;

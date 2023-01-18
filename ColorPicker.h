@@ -1,3 +1,4 @@
+#pragma once
 //#ifndef COLORPICKER_H
 //#define COLORPICKER_H
 

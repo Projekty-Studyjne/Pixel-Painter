@@ -1,3 +1,4 @@
+#pragma once
 //#ifndef BUCKET_H
 //#define BUCKET_H
 
