@@ -13,8 +13,8 @@ SOURCES += \
     Brush.cpp \
     Bucket.cpp \
     ColorPalette.cpp \
-    ColorPicker.cpp \
     Eraser.cpp \
+    Magnifier.cpp \
     main.cpp \
     mainwindow.cpp \
     tests.cpp
@@ -24,8 +24,8 @@ HEADERS += \
     Brush.h \
     Bucket.h \
     ColorPalette.h \
-    ColorPicker.h \
     Eraser.h \
+    Magnifier.h \
     Tool.h \
     mainwindow.h \
     tests.h

@@ -4,7 +4,10 @@
 #include <QMainWindow>
 #include "Brush.h"
 #include "Eraser.h"
+#include "ColorPalette.h"
+//#include <QColorDialog>
 #include <QMouseEvent>
+#include <QVBoxLayout>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -26,6 +29,7 @@ private:
     Ui::MainWindow *ui;
     Board *board = new Board();
     Tool *tool= new Brush();
+    ColorPalette *colorPalette = new ColorPalette(this);
 protected:
     void mousePressEvent(QMouseEvent *event);
 };

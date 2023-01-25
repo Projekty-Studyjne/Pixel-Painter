@@ -14,24 +14,14 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="btnBrush">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>60</y>
-      <width>80</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Brush</string>
-    </property>
-   </widget>
    <widget class="QGraphicsView" name="GraphicBoard">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>80</y>
+      <x>540</x>
+      <y>0</y>
       <width>610</width>
       <height>610</height>
      </rect>
@@ -48,16 +38,43 @@
       <height>610</height>
      </size>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #1B1B20;</string>
+     <string notr="true">background-color: rgb(255, 255, 255)</string>
+    </property>
+    <property name="lineWidth">
+     <number>1</number>
+    </property>
+    <property name="backgroundBrush">
+     <brush brushstyle="NoBrush">
+      <color alpha="255">
+       <red>255</red>
+       <green>255</green>
+       <blue>255</blue>
+      </color>
+     </brush>
+    </property>
+    <property name="foregroundBrush">
+     <brush brushstyle="NoBrush">
+      <color alpha="255">
+       <red>255</red>
+       <green>255</green>
+       <blue>255</blue>
+      </color>
+     </brush>
     </property>
    </widget>
    <widget class="QSlider" name="sldCellsNumber">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>40</y>
-      <width>160</width>
+      <x>120</x>
+      <y>20</y>
+      <width>84</width>
       <height>16</height>
      </rect>
     </property>
@@ -71,18 +88,31 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnEraser">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>100</y>
-      <width>80</width>
-      <height>21</height>
+      <x>10</x>
+      <y>20</y>
+      <width>82</width>
+      <height>50</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Eraser</string>
-    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="btnBrush">
+       <property name="text">
+        <string>Brush</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnEraser">
+       <property name="text">
+        <string>Eraser</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -91,7 +121,7 @@
      <x>0</x>
      <y>0</y>
      <width>1158</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>
