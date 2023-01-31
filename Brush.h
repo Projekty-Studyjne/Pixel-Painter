@@ -12,5 +12,5 @@ class Brush : public Tool{
     QGraphicsScene *scene = new QGraphicsScene();
     Board *board;
 public:
-    void use(Board &board, QPointF point,ColorPalette &colorPalette);
+    void use(Board &board, QPointF point, ColorPalette &colorPalette);
 };

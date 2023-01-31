@@ -1,13 +1,13 @@
 #include "Bucket.h"
 
-void Bucket::use(Board &board, QPointF points){
+void Bucket::use(Board &board, QPointF points, ColorPalette &colorPalette){
     int x,y;
     int cell_size=board.getCellSize();
     x=points.x()/cell_size;
     y=points.y()/cell_size;
     int index= (board.getCellsNumber()*x)+y;
 
-    QColor newColor(Qt::red);
+    QColor newColor=colorPalette.currentColor();
     if(x < board.getCellsNumber() && y < board.getCellsNumber() && index < board.getPointList().size() && points.x() >0 && points.y()> 0){
 
         QColor oldColor=board.getColorOfPoint({x,y});
