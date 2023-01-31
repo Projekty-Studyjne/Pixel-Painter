@@ -54,4 +54,9 @@ void MainWindow::on_btnEraser_clicked()
 }
 
 
+void MainWindow::on_btnBucked_clicked()
+{
+    delete tool;
+    tool = new Bucket();
+}
 

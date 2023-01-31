@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "Brush.h"
 #include "Eraser.h"
+#include "Bucket.h"
 #include "ColorPalette.h"
 //#include <QColorDialog>
 #include <QMouseEvent>
@@ -24,6 +25,8 @@ private slots:
     void on_btnBrush_clicked();
     void on_sldCellsNumber_valueChanged(int value);
     void on_btnEraser_clicked();
+
+    void on_btnBucked_clicked();
 
 private:
     Ui::MainWindow *ui;
