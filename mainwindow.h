@@ -25,9 +25,8 @@ private slots:
     void on_btnBrush_clicked();
     void on_sldCellsNumber_valueChanged(int value);
     void on_btnEraser_clicked();
-
     void on_btnBucked_clicked();
-
+    void on_btnClear_clicked();
 private:
     Ui::MainWindow *ui;
     Board *board = new Board();

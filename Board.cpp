@@ -1,6 +1,7 @@
 #include <Board.h>
 
 void Board::fillTable(){
+    points_list.clear();
     point new_point;
     for(int x=0;x<cellsNumber;x++){
         for( int y=0;y<cellsNumber;y++){
@@ -54,7 +55,6 @@ void Board::setColor(QColor color, int index){
 
 void Board::setCellsNumber(int cellsnumber){
     this->cellsNumber=cellsnumber;
-    points_list.clear();
     fillTable();
 }
 

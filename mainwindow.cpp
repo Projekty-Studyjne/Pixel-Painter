@@ -7,17 +7,29 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->btnBrush->setIcon(QIcon(":/icons/brush.png"));
+    ui->btnBrush->setIconSize(QSize(60, 60));
+
+    ui->btnEraser->setIcon(QIcon(":/icons/eraser.png"));
+    ui->btnEraser->setIconSize(QSize(60, 60));
+
+    ui->btnBucked->setIcon(QIcon(":/icons/bucket.png"));
+    ui->btnBucked->setIconSize(QSize(60, 60));
+
+    ui->btnClear->setIcon(QIcon(":/icons/clear.png"));
+    ui->btnClear->setIconSize(QSize(60, 60));
 
     //Dodanie layoutu zeby moc dodawac nowe widgety w kodzie
     ui->centralwidget->setLayout(new QVBoxLayout);
     ui->centralwidget->layout()->addWidget(colorPalette);
     colorPalette->setOptions(
                     ColorPalette::DontUseNativeDialog
-                    | ColorPalette::NoButtons);
-
+                    |ColorPalette::NoButtons);
+colorPalette->setStyleSheet("QPushButton{ color: white}");
     board->createBoard(ui->GraphicBoard);
     board->fillTable();
 }
+
 
 MainWindow::~MainWindow()
 {
@@ -26,6 +38,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btnBrush_clicked()
 {
+    ui->btnEraser->setStyleSheet("QPushButton{ background-color: white}");
+    ui->btnBrush->setStyleSheet("QPushButton{ background-color: rgb(139, 116, 189)}");
+    ui->btnBucked->setStyleSheet("QPushButton{ background-color: white}");
+    delete tool;
     tool = new Brush();
 }
 
@@ -49,6 +65,9 @@ void MainWindow::on_sldCellsNumber_valueChanged(int value)
 
 void MainWindow::on_btnEraser_clicked()
 {
+    ui->btnEraser->setStyleSheet("QPushButton{ background-color: rgb(139, 116, 189)}");
+    ui->btnBrush->setStyleSheet("QPushButton{ background-color: white}");
+    ui->btnBucked->setStyleSheet("QPushButton{ background-color: white}");
     delete tool;
     tool = new Eraser();
 }
@@ -56,7 +75,18 @@ void MainWindow::on_btnEraser_clicked()
 
 void MainWindow::on_btnBucked_clicked()
 {
+    ui->btnEraser->setStyleSheet("QPushButton{ background-color: white}");
+    ui->btnBrush->setStyleSheet("QPushButton{ background-color: white}");
+    ui->btnBucked->setStyleSheet("QPushButton{ background-color: rgb(139, 116, 189)}");
     delete tool;
     tool = new Bucket();
 }
+
+void MainWindow::on_btnClear_clicked()
+{
+   board->fillTable();
+   board->createBoard(ui->GraphicBoard);
+}
+
+
 
