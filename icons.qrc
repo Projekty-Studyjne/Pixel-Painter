@@ -7,6 +7,7 @@
 	<file>icons/save.png</file>
 	<file>icons/open.png</file>
 	<file>icons/export.png</file>
+	<file>icons/logo.jpg</file>
  </qresource>
 </RCC>
 

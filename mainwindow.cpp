@@ -28,6 +28,11 @@ MainWindow::MainWindow(QWidget *parent)
     ui->btnExport->setIcon(QIcon(":/icons/export.png"));
     ui->btnExport->setIconSize(QSize(60, 60));
 
+    QPixmap pixmap(":/icons/logo.jpg");
+        ui->logo->setPixmap(pixmap);
+    QPixmap scaledPixmap = pixmap.scaled(200, 200, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+        ui->logo->setPixmap(scaledPixmap);
+
     //Dodanie layoutu zeby moc dodawac nowe widgety w kodzie
     ui->centralwidget->setLayout(new QVBoxLayout);
     ui->centralwidget->layout()->addWidget(colorPalette);
