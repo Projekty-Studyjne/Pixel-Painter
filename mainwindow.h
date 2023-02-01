@@ -27,6 +27,12 @@ private slots:
     void on_btnEraser_clicked();
     void on_btnBucked_clicked();
     void on_btnClear_clicked();
+    void on_btnSave_clicked();
+
+    void on_btnExport_clicked();
+
+    void on_btnOpen_clicked();
+
 private:
     Ui::MainWindow *ui;
     Board *board = new Board();

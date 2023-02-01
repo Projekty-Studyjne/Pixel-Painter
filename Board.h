@@ -8,11 +8,12 @@
 #include "QtWidgets"
 //#include "tests.h"
 #include"QDebug"
-
+using namespace std;
+#include <iostream>
+#include <fstream>
 struct point{
     int x;
     int y;
-    bool isFilled;
     QColor color;
 };
 
@@ -22,6 +23,7 @@ private:
     int cellSize=0;
     std::vector<point> points_list;
     double previousScaleFactor = 1.0;
+    QGraphicsScene *scene=nullptr;
 public:
     Board(QWidget *parent = nullptr) : QGraphicsView(parent) {}
     void createBoard(QGraphicsView *GraphicBoard);
@@ -38,9 +40,8 @@ public:
     QColor getColorOfPoint(point point);
     int getCellsNumber();
     void setColor(QColor color, int index);
+
 protected:
     void wheelEvent(QWheelEvent *event) override;
-//    void mousePressEvent(QMouseEvent *event) override;
-//    void mouseDoubleClickEvent(QMouseEvent *event) override;
 };
 #endif // BOARD_H
