@@ -4,6 +4,8 @@
 #include "QGraphicsScene"
 #include "QGraphicsView"
 #include "QVector"
+#include "QWidget"
+#include "QtWidgets"
 //#include "tests.h"
 #include"QDebug"
 
@@ -14,12 +16,14 @@ struct point{
     QColor color;
 };
 
-class Board{
+class Board : public QGraphicsView{
 private:
     int cellsNumber=10;
     int cellSize=0;
     std::vector<point> points_list;
+    double previousScaleFactor = 1.0;
 public:
+    Board(QWidget *parent = nullptr) : QGraphicsView(parent) {}
     void createBoard(QGraphicsView *GraphicBoard);
     void undo();
     void open();
@@ -34,5 +38,9 @@ public:
     QColor getColorOfPoint(point point);
     int getCellsNumber();
     void setColor(QColor color, int index);
+protected:
+    void wheelEvent(QWheelEvent *event) override;
+//    void mousePressEvent(QMouseEvent *event) override;
+//    void mouseDoubleClickEvent(QMouseEvent *event) override;
 };
 #endif // BOARD_H

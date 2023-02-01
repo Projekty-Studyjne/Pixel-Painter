@@ -12,6 +12,9 @@ void Board::fillTable(){
 }
 
 void Board::createBoard(QGraphicsView *GraphicBoard){
+    double scale = GraphicBoard->transform().m11();
+    QPoint viewportCenter = GraphicBoard->viewport()->rect().center();
+    QPointF previousCenter = GraphicBoard->mapToScene(GraphicBoard->viewport()->rect().center());
     QGraphicsScene *scene=new QGraphicsScene();
     GraphicBoard->setScene(scene);
     QPen blackpen(Qt::darkGray);
@@ -25,6 +28,9 @@ void Board::createBoard(QGraphicsView *GraphicBoard){
          scene->addRect(wielkosc_x*cellSize, wielkosc_y*cellSize, cellSize, cellSize, blackpen, color);
         }
     }
+    GraphicBoard->resetTransform();
+    GraphicBoard->scale(scale, scale);
+    GraphicBoard->centerOn(previousCenter);
 }
 
 int Board::getCellSize(){
@@ -53,6 +59,20 @@ void Board::setColor(QColor color, int index){
     points_list[index].color = color;
 }
 
+void Board::wheelEvent(QWheelEvent *event)
+{
+    setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
+    double scaleFactor=1.15;
+    if(event->angleDelta().y()>0){
+        scale(scaleFactor,scaleFactor);
+//        previousScaleFactor = scaleFactor;
+    }
+    else{
+        scale(1/scaleFactor, 1/scaleFactor);
+//        previousScaleFactor = scaleFactor;
+    }
+}
+
 void Board::setCellsNumber(int cellsnumber){
     this->cellsNumber=cellsnumber;
     fillTable();
@@ -61,6 +81,7 @@ void Board::setCellsNumber(int cellsnumber){
 void Board::setCellSize(int cellsize){
     this->cellSize=cellSize;
 }
+
 
 
 

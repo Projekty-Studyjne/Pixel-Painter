@@ -46,7 +46,7 @@
    <enum>QTabWidget::Rounded</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGraphicsView" name="GraphicBoard">
+   <widget class="Board" name="GraphicBoard">
     <property name="enabled">
      <bool>true</bool>
     </property>
@@ -278,6 +278,13 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Board</class>
+   <extends>QGraphicsView</extends>
+   <header>board.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
