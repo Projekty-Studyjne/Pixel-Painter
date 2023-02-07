@@ -1,7 +1,7 @@
 #include "Brush.h"
 #include "QDebug"
 
-void Brush::use(Board &board, QPointF point,ColorPalette &colorPalette){
+void Brush::use(Board &board, QPointF point, ColorPalette &colorPalette){
     int x,y;
     int cellSize=board.getCellSize();
     x=point.x()/cellSize;
