@@ -11,6 +11,7 @@ void Brush::use(Board &board, QPointF point,ColorPalette &colorPalette){
     QColor color= colorPalette.currentColor();
     if(x<board.getCellsNumber() && y < board.getCellsNumber() && index<board.getPointList().size() && point.x() >0 && point.y()> 0){
     board.setColor(color, index);
+    board.setFilled(true,index);
     }
 //    }
 //    for(int i=0;i<board.getPointList().size();i++){

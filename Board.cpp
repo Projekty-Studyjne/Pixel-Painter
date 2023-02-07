@@ -11,9 +11,41 @@ void Board::fillTable(){
     }
 }
 
+void Board::resizeTable(int new_size){
+    std::vector<point> temp_point_list;
+    for(int i=0;i<points_list.size();i++){
+        temp_point_list.push_back(points_list[i]);
+    }
+    points_list.clear();
+    fillTable();
+    if((new_size*new_size)>temp_point_list.size()){
+    for(int i=0;i<temp_point_list.size();i++){
+        if(temp_point_list[i].isFilled){
+            point point;
+            point.x=temp_point_list[i].x;
+            point.y=temp_point_list[i].y;
+            int index=getIndexOfPoint(point);
+            points_list[index].color=temp_point_list[i].color;
+            points_list[index].isFilled=temp_point_list[i].isFilled;
+        }
+    }
+    }
+    else{
+        for(int i=0;i<points_list.size();i++){
+            point point;
+            point.x=temp_point_list[i].x;
+            point.y=temp_point_list[i].y;
+            if(point.x<cellsNumber && point.y<cellsNumber){
+            int index=getIndexOfPoint(point);
+            points_list[index].color=temp_point_list[i].color;
+            points_list[index].isFilled=temp_point_list[i].isFilled;
+            }
+        }
+    }
+}
+
 void Board::createBoard(QGraphicsView *GraphicBoard){
     double scale = GraphicBoard->transform().m11();
-    QPoint viewportCenter = GraphicBoard->viewport()->rect().center();
     QPointF previousCenter = GraphicBoard->mapToScene(GraphicBoard->viewport()->rect().center());
     scene = new QGraphicsScene();
     GraphicBoard->setScene(scene);
@@ -55,11 +87,26 @@ QColor Board::getColorOfPoint(point point){
         return color;
 }
 
+int Board::getIndexOfPoint(point point){
+    int point_index;
+    for(int index=0; index<points_list.size(); index++){
+        if(point.x==points_list[index].x && point.y==points_list[index].y){
+            point_index=index;
+            }
+        }
+    return point_index;
+}
+
 void Board::setColor(QColor color, int index){
     points_list[index].color = color;
 }
 
 
+
+
+void Board::setFilled(bool isFilled,int index){
+    points_list[index].isFilled=isFilled;
+}
 
 void Board::wheelEvent(QWheelEvent *event)
 {
@@ -77,7 +124,9 @@ void Board::wheelEvent(QWheelEvent *event)
 
 void Board::setCellsNumber(int cellsnumber){
     this->cellsNumber=cellsnumber;
-    fillTable();
+    resizeTable(cellsNumber);
+    //fillTable();
+
 }
 
 void Board::setCellSize(int cellsize){

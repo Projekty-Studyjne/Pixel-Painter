@@ -36,4 +36,5 @@ void Bucket::use(Board &board, QPointF points, ColorPalette &colorPalette){
 void Bucket::fill(int x,int y, QColor color, Board &board){
     int index = (board.getCellsNumber()*(x))+(y);
     board.setColor(color, index);
+    board.setFilled(true,index);
 }

@@ -11,10 +11,12 @@
 using namespace std;
 #include <iostream>
 #include <fstream>
+
 struct point{
     int x;
     int y;
     QColor color;
+    bool isFilled;
 };
 
 class Board : public QGraphicsView{
@@ -38,9 +40,11 @@ public:
     std::vector<point> getPointList();
     int getCellSize();
     QColor getColorOfPoint(point point);
+    int getIndexOfPoint(point point);
     int getCellsNumber();
     void setColor(QColor color, int index);
-
+    void resizeTable(int new_size);
+    void setFilled(bool isFilled,int index);
 protected:
     void wheelEvent(QWheelEvent *event) override;
 };
