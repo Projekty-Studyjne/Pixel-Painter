@@ -14,10 +14,8 @@ SOURCES += \
     Bucket.cpp \
     ColorPalette.cpp \
     Eraser.cpp \
-    Magnifier.cpp \
     main.cpp \
-    mainwindow.cpp \
-    tests.cpp
+    mainwindow.cpp
 
 HEADERS += \
     Board.h \
@@ -25,10 +23,8 @@ HEADERS += \
     Bucket.h \
     ColorPalette.h \
     Eraser.h \
-    Magnifier.h \
     Tool.h \
-    mainwindow.h \
-    tests.h
+    mainwindow.h
 
 FORMS += \
     mainwindow.ui

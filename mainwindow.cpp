@@ -33,7 +33,6 @@ MainWindow::MainWindow(QWidget *parent)
     QPixmap scaledPixmap = pixmap.scaled(200, 200, Qt::KeepAspectRatio, Qt::SmoothTransformation);
         ui->logo->setPixmap(scaledPixmap);
 
-    //Dodanie layoutu zeby moc dodawac nowe widgety w kodzie
     ui->centralwidget->setLayout(new QVBoxLayout);
     ui->centralwidget->layout()->addWidget(colorPalette);
     colorPalette->setOptions(
@@ -43,7 +42,6 @@ MainWindow::MainWindow(QWidget *parent)
                 "QPushButton{ color: white; background-color: rgb(34, 39, 122)}"
                 "QSpinBox{ color: white; background-color: rgb(8, 13, 67)}"
                 "QLabel{ color: white}"
-//                "QTextBrowser{ color: white; background-color: rgb(34, 39, 122)}"
                 );
     board->createBoard(ui->GraphicBoard);
     board->fillTable();
@@ -70,9 +68,6 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
    QPoint viewPos = ui->GraphicBoard->mapFromGlobal(globalPos);
    QPointF scenePos = ui->GraphicBoard->mapToScene(viewPos);
    tool->use(*board,scenePos,*colorPalette);
-//        for(int i=0;i<board->getPointList().size();i++){
-//            qInfo()<<"x: " << board->getPointList()[i].x << "y: " << board->getPointList()[i].y << "color: " << board->getPointList()[i].color.toRgb();
-//        }
    board->createBoard(ui->GraphicBoard);
 }
 
@@ -124,6 +119,8 @@ void MainWindow::on_btnExport_clicked()
 void MainWindow::on_btnOpen_clicked()
 {
     board->open();
+    ui->sldCellsNumber->setValue(board->getCellsNumber());
+    ui->spinBox->setValue(board->getCellsNumber());
     board->createBoard(ui->GraphicBoard);
 }
 

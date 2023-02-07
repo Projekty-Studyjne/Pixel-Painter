@@ -6,7 +6,6 @@
 #include "Eraser.h"
 #include "Bucket.h"
 #include "ColorPalette.h"
-//#include <QColorDialog>
 #include <QMouseEvent>
 #include <QVBoxLayout>
 QT_BEGIN_NAMESPACE
@@ -28,9 +27,7 @@ private slots:
     void on_btnBucked_clicked();
     void on_btnClear_clicked();
     void on_btnSave_clicked();
-
     void on_btnExport_clicked();
-
     void on_btnOpen_clicked();
 
 private:
